@@ -1,0 +1,148 @@
+<mujoco model="LW">
+    <compiler angle="radian" meshdir="assets" />
+    <size njmax="500" nconmax="100" />
+
+    <default>
+        <light castshadow="false" diffuse="1 1 1" />
+        <camera fovy="60"/>
+        <default class="visual">
+            <geom contype="0" conaffinity="0" group="1" type="mesh" rgba="0.9 0.9 0.9 1.0"/>
+        </default>
+        <joint armature="0.01" damping="0.01"/>
+        <geom contype="1" conaffinity="1" condim="3" friction="0.6 0.005 0.0001" rgba="0.5 0.6 0.7 1.0" margin="0.001" group="0" />
+    </default>
+    <visual>
+        <rgba com="0.502 1.0 0 0.5" contactpoint="1.0 1.0 0.6 0.4" contactforce="0.2 0.98 0.2 0.8"/>
+        <scale com="0.2" forcewidth="0.05" contactwidth="0.10" contactheight="0.04"/>
+    </visual>
+
+    <asset>
+        <mesh name="base_link" file="base_link.stl" />
+        <mesh name="right_hip_link" file="right_hip.stl" />
+        <mesh name="right_thigh_link" file="right_thigh.stl" />
+        <mesh name="right_shank_link" file="right_shank.stl" />
+        <mesh name="right_wheel_link" file="right_wheel.stl" />
+        <mesh name="right_foot_link" file="right_foot.stl" />
+        <mesh name="left_hip_link" file="left_hip.stl" />
+        <mesh name="left_thigh_link" file="left_thigh.stl" />
+        <mesh name="left_shank_link" file="left_shank.stl" />
+        <mesh name="left_wheel_link" file="left_wheel.stl" />
+        <mesh name="left_foot_link" file="left_foot.stl" />
+    </asset>
+
+    <option timestep="0.001"/>
+
+    <worldbody>
+        <camera name="track" mode="trackcom" pos="0 -2.3 1.6" xyaxes="1 0 0 0 0.707 0.707"/>
+        <light directional="true" diffuse=".8 .8 .8" pos="0 0 10" dir="0 0 -10"/>
+
+        <body name="base_link" pos="0 0 0.75">
+            <inertial pos="0.09363836 0.00071974 -0.03341964" mass="10.764933" fullinertia="0.11868246 0.10939137 0.10398242 -8.927e-05 -0.01324409 0.00056877"/>
+            <joint type="free" limited="false" damping="0.0000" stiffness="0.0000" armature="0"/>
+            <site name="imu" pos="0 0 0"/>
+            <geom class="visual" rgba="0.79216 0.81961 0.93333 1" mesh="base_link" />
+            <geom name="base_collision" type="mesh" mesh="base_link" rgba="0 0 1 0" />
+
+            <body name="right_hip_link" pos="-0.077000 -0.080000 -0.115700">
+                <inertial pos="0.01209628 0.0023636 0.00082575" mass="1.6953224" fullinertia="0.0016009 0.00300536 0.0026637 0.000279 3.06e-05 7.03e-06"/>
+                <joint name="right_hip_joint" pos="0 0 0" axis="1 0 0" limited="true" range="-1.570796 1.570796" damping="0.175" armature="0.055" />
+                <geom class="visual" rgba="0.79216 0.81961 0.93333 1" mesh="right_hip_link" />
+                <geom name="right_hip_collision" type="mesh" mesh="right_hip_link" rgba="0 0 1 0" />
+
+                <body name="right_thigh_link" pos="0.000000 -0.072000 0.000000">
+                    <inertial pos="0.00184534 0.01711708 -0.19844668" mass="2.0829221" fullinertia="0.023818 0.0248727 0.00222419 2.197e-05 0.00025062 0.00095727"/>
+                    <joint name="right_thigh_joint" pos="0 0 0" axis="0 1 0" limited="true" range="-1.570796 1.570796" damping="0.190" armature="0.055" />
+                    <geom class="visual" rgba="0.79216 0.81961 0.93333 1" mesh="right_thigh_link" />
+                    <geom name="right_thigh_collision" type="mesh" mesh="right_thigh_link" rgba="0 0 1 0" />
+
+                    <body name="right_shank_link" pos="0.000000 -0.045000 -0.260000">
+                        <inertial pos="-0.10137469 -0.0175333 -0.02485088" mass="1.9744798" fullinertia="0.07867343 0.09441814 0.01693077 -0.00127684 -0.03069711 -0.00168612"/>
+                        <joint name="right_shank_joint" pos="0 0 0" axis="0 1 0" limited="true" range="-3.141593 3.141593" damping="0.175" armature="0.054" />
+                        <geom class="visual" rgba="0.79216 0.81961 0.93333 1" mesh="right_shank_link" />
+                        <geom name="right_shank_collision" type="mesh" mesh="right_shank_link" rgba="0 0 1 0" />
+
+                        <body name="right_wheel_link" pos="-0.183850 -0.059500 -0.183850">
+                            <inertial pos="0 -0.00593046 0" mass="1.1860721" fullinertia="0.00406726 0.00771907 0.00406726 0 0 0"/>
+                            <joint name="right_wheel_joint" pos="0 0 0" axis="0 1 0" limited="false" damping="0.06723" armature="0.0158" />
+                            <geom class="visual" rgba="0.79216 0.81961 0.93333 1" mesh="right_wheel_link" />
+                            <geom name="right_wheel_collision" type="mesh" mesh="right_wheel_link" rgba="0 0 1 0" />
+                        </body>
+
+                        <body name="right_foot_link" pos="0.000000 -0.013000 0.307000">
+                            <inertial pos="0 -0.00054044 0.05031524" mass="0.39895837" fullinertia="0.00036037 0.0010168 0.00120664 0 0 -8.4e-07"/>
+                            <joint name="right_foot_joint" pos="0 0 0" axis="0 1 0" limited="true" range="-1.919862 1.919862" damping="0.32" armature="0.029" />
+                            <geom class="visual" rgba="0.79216 0.81961 0.93333 1" mesh="right_foot_link" />
+                            <geom name="right_foot_collision" type="mesh" mesh="right_foot_link" rgba="0 0 1 0" />
+                        </body>
+                    </body>
+                </body>
+            </body>
+
+            <body name="left_hip_link" pos="-0.077000 0.080000 -0.115700">
+                <inertial pos="0.00755272 -0.0023636 0.00082575" mass="1.6953224" fullinertia="0.0016009 0.00315671 0.00281505 -0.0002328 -3.09e-06 -7.03e-06"/>
+                <joint name="left_hip_joint" pos="0 0 0" axis="1 0 0" limited="true" range="-1.570796 1.570796" damping="0.180" armature="0.053" />
+                <geom class="visual" rgba="0.79216 0.81961 0.93333 1" mesh="left_hip_link" />
+                <geom name="left_hip_collision" type="mesh" mesh="left_hip_link" rgba="0 0 1 0" />
+
+                <body name="left_thigh_link" pos="0.000000 0.072000 0.000000">
+                    <inertial pos="-0.00185274 -0.01711716 -0.19844796" mass="2.0829087" fullinertia="0.02381747 0.02487208 0.00222409 2.233e-05 -0.00025084 -0.00095724"/>
+                    <joint name="left_thigh_joint" pos="0 0 0" axis="0 1 0" limited="true" range="-1.570796 1.570796" damping="0.193" armature="0.055" />
+                    <geom class="visual" rgba="0.79216 0.81961 0.93333 1" mesh="left_thigh_link" />
+                    <geom name="left_thigh_collision" type="mesh" mesh="left_thigh_link" rgba="0 0 1 0" />
+
+                    <body name="left_shank_link" pos="0.000000 0.045000 -0.260000">
+                        <inertial pos="-0.10139902 0.0175333 -0.02482657" mass="1.9744798" fullinertia="0.07865791 0.09441078 0.01693893 0.00127577 -0.03070076 0.00168719"/>
+                        <joint name="left_shank_joint" pos="0 0 0" axis="0 1 0" limited="true" range="-3.141593 3.141593" damping="0.182" armature="0.056" />
+                        <geom class="visual" rgba="0.79216 0.81961 0.93333 1" mesh="left_shank_link" />
+                        <geom name="left_shank_collision" type="mesh" mesh="left_shank_link" rgba="0 0 1 0" />
+
+                        <body name="left_wheel_link" pos="-0.183850 0.061000 -0.183850">
+                            <inertial pos="0 0.00443046 0" mass="1.1860721" fullinertia="0.00406726 0.00771907 0.00406726 0 0 0"/>
+                            <joint name="left_wheel_joint" pos="0 0 0" axis="0 1 0" limited="false" damping="0.0758" armature="0.014985" />
+                            <geom class="visual" rgba="0.79216 0.81961 0.93333 1" mesh="left_wheel_link" />
+                            <geom name="left_wheel_collision" type="mesh" mesh="left_wheel_link" rgba="0 0 1 0" />
+                        </body>
+
+                        <body name="left_foot_link" pos="0.000000 0.013000 0.307000">
+                            <inertial pos="0 0.00054044 0.05031524" mass="0.39895837" fullinertia="0.00036067 0.0010168 0.00120664 0 0 8.4e-07"/>
+                            <joint name="left_foot_joint" pos="0 0 0" axis="0 1 0" limited="true" range="-1.919862 1.919862" damping="0.414" armature="0.0264" />
+                            <geom class="visual" rgba="0.79216 0.81961 0.93333 1" mesh="left_foot_link" />
+                            <geom name="left_foot_collision" type="mesh" mesh="left_foot_link" rgba="0 0 1 0" />
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+
+    <actuator>
+        <motor name="right_hip_joint"  gear="1"  joint="right_hip_joint" ctrllimited='true' ctrlrange='-120 120'/>
+        <motor name="left_hip_joint"   gear="1"  joint="left_hip_joint"  ctrllimited='true' ctrlrange='-120 120'/>
+        <motor name="right_thigh_joint"  gear="1"  joint="right_thigh_joint" ctrllimited='true' ctrlrange='-120 120'/>
+        <motor name="left_thigh_joint"   gear="1"  joint="left_thigh_joint"  ctrllimited='true' ctrlrange='-120 120'/>
+        <motor name="right_shank_joint"  gear="1"  joint="right_shank_joint" ctrllimited='true' ctrlrange='-120 120'/>
+        <motor name="left_shank_joint"   gear="1"  joint="left_shank_joint"  ctrllimited='true' ctrlrange='-120 120'/>
+        <motor name="right_wheel_joint"  gear="1"  joint="right_wheel_joint" ctrllimited='true' ctrlrange='-40 40'/>
+        <motor name="left_wheel_joint"   gear="1"  joint="left_wheel_joint"  ctrllimited='true' ctrlrange='-40 40'/>
+        <motor name="right_foot_joint"  gear="1"  joint="right_foot_joint" ctrllimited='true' ctrlrange='-27 27'/>
+        <motor name="left_foot_joint"   gear="1"  joint="left_foot_joint"  ctrllimited='true' ctrlrange='-27 27'/>
+    </actuator>
+
+    <sensor>
+        <framequat name="quat" objtype="site" objname="imu"/>
+        <gyro name="gyro" site="imu"/>
+        <accelerometer name="acc" site="imu"/>
+        <jointpos name="right_hip_joint"    joint="right_hip_joint" />
+        <jointpos name="left_hip_joint"     joint="left_hip_joint" />
+        <jointpos name="right_thigh_joint"    joint="right_thigh_joint" />
+        <jointpos name="left_thigh_joint"     joint="left_thigh_joint" />
+        <jointpos name="right_shank_joint"    joint="right_shank_joint" />
+        <jointpos name="left_shank_joint"     joint="left_shank_joint" />
+        <jointpos name="right_wheel_joint"    joint="right_wheel_joint" />
+        <jointpos name="left_wheel_joint"     joint="left_wheel_joint" />
+        <jointpos name="right_foot_joint"    joint="right_foot_joint" />
+        <jointpos name="left_foot_joint"     joint="left_foot_joint" />
+    </sensor>
+
+</mujoco>
+
