@@ -129,19 +129,42 @@
     </actuator>
 
     <sensor>
+        <jointpos name="right_hip_pos"    joint="right_hip_joint" />
+        <jointpos name="left_hip_pos"     joint="left_hip_joint" />
+        <jointpos name="right_thigh_pos"    joint="right_thigh_joint" />
+        <jointpos name="left_thigh_pos"     joint="left_thigh_joint" />
+        <jointpos name="right_shank_pos"    joint="right_shank_joint" />
+        <jointpos name="left_shank_pos"     joint="left_shank_joint" />
+        <jointpos name="right_wheel_pos"    joint="right_wheel_joint" />
+        <jointpos name="left_wheel_pos"     joint="left_wheel_joint" />
+        <jointpos name="right_foot_pos"    joint="right_foot_joint" />
+        <jointpos name="left_foot_pos"     joint="left_foot_joint" />
+
+        <jointpos name="right_hip_vel"    joint="right_hip_joint" />
+        <jointpos name="left_hip_vel"     joint="left_hip_joint" />
+        <jointpos name="right_thigh_vel"    joint="right_thigh_joint" />
+        <jointpos name="left_thigh_vel"     joint="left_thigh_joint" />
+        <jointpos name="right_shank_vel"    joint="right_shank_joint" />
+        <jointpos name="left_shank_vel"     joint="left_shank_joint" />
+        <jointpos name="right_wheel_vel"    joint="right_wheel_joint" />
+        <jointpos name="left_wheel_vel"     joint="left_wheel_joint" />
+        <jointpos name="right_foot_vel"    joint="right_foot_joint" />
+        <jointpos name="left_foot_vel"     joint="left_foot_joint" />
+
+        <jointactuatorfrc name="right_hip_torque" joint="right_hip_joint" noise="0.01" />
+        <jointactuatorfrc name="left_hip_torque" joint="right_hip_joint" noise="0.01" />
+        <jointactuatorfrc name="right_hip_torque" joint="right_hip_joint" noise="0.01" />
+        <jointactuatorfrc name="left_hip_torque" joint="right_hip_joint" noise="0.01" />
+        <jointactuatorfrc name="right_hip_torque" joint="right_hip_joint" noise="0.01" />
+        <jointactuatorfrc name="left_hip_torque" joint="right_hip_joint" noise="0.01" />
+        <jointactuatorfrc name="right_hip_torque" joint="right_hip_joint" noise="0.01" />
+        <jointactuatorfrc name="left_hip_torque" joint="right_hip_joint" noise="0.01" />
+        <jointactuatorfrc name="right_hip_torque" joint="right_hip_joint" noise="0.01" />
+        <jointactuatorfrc name="left_hip_torque" joint="right_hip_joint" noise="0.01" />
+
         <framequat name="quat" objtype="site" objname="imu"/>
         <gyro name="gyro" site="imu"/>
         <accelerometer name="acc" site="imu"/>
-        <jointpos name="right_hip_joint"    joint="right_hip_joint" />
-        <jointpos name="left_hip_joint"     joint="left_hip_joint" />
-        <jointpos name="right_thigh_joint"    joint="right_thigh_joint" />
-        <jointpos name="left_thigh_joint"     joint="left_thigh_joint" />
-        <jointpos name="right_shank_joint"    joint="right_shank_joint" />
-        <jointpos name="left_shank_joint"     joint="left_shank_joint" />
-        <jointpos name="right_wheel_joint"    joint="right_wheel_joint" />
-        <jointpos name="left_wheel_joint"     joint="left_wheel_joint" />
-        <jointpos name="right_foot_joint"    joint="right_foot_joint" />
-        <jointpos name="left_foot_joint"     joint="left_foot_joint" />
     </sensor>
 
 </mujoco>
