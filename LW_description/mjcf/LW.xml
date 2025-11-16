@@ -153,14 +153,14 @@
 
         <jointactuatorfrc name="right_hip_torque" joint="right_hip_joint" noise="0.01" />
         <jointactuatorfrc name="left_hip_torque" joint="right_hip_joint" noise="0.01" />
-        <jointactuatorfrc name="right_hip_torque" joint="right_hip_joint" noise="0.01" />
-        <jointactuatorfrc name="left_hip_torque" joint="right_hip_joint" noise="0.01" />
-        <jointactuatorfrc name="right_hip_torque" joint="right_hip_joint" noise="0.01" />
-        <jointactuatorfrc name="left_hip_torque" joint="right_hip_joint" noise="0.01" />
-        <jointactuatorfrc name="right_hip_torque" joint="right_hip_joint" noise="0.01" />
-        <jointactuatorfrc name="left_hip_torque" joint="right_hip_joint" noise="0.01" />
-        <jointactuatorfrc name="right_hip_torque" joint="right_hip_joint" noise="0.01" />
-        <jointactuatorfrc name="left_hip_torque" joint="right_hip_joint" noise="0.01" />
+        <jointactuatorfrc name="right_thigh_torque" joint="right_hip_joint" noise="0.01" />
+        <jointactuatorfrc name="left_thigh_torque" joint="right_hip_joint" noise="0.01" />
+        <jointactuatorfrc name="right_shank_torque" joint="right_hip_joint" noise="0.01" />
+        <jointactuatorfrc name="left_shank_torque" joint="right_hip_joint" noise="0.01" />
+        <jointactuatorfrc name="right_wheel_torque" joint="right_hip_joint" noise="0.01" />
+        <jointactuatorfrc name="left_wheel_torque" joint="right_hip_joint" noise="0.01" />
+        <jointactuatorfrc name="right_foot_torque" joint="right_hip_joint" noise="0.01" />
+        <jointactuatorfrc name="left_foot_torque" joint="right_hip_joint" noise="0.01" />
 
         <framequat name="quat" objtype="site" objname="imu"/>
         <gyro name="gyro" site="imu"/>
