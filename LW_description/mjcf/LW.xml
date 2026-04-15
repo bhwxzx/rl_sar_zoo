@@ -59,7 +59,7 @@
                     <geom name="right_thigh_collision" type="mesh" mesh="right_thigh_link" rgba="0 0 1 0" contype="8" conaffinity="1"/>
 
                     <body name="right_shank_link" pos="0.000000 -0.045000 -0.260000">
-                        <inertial pos="-0.0928844 -0.01658216 -0.01223815" mass="2.3057846" fullinertia="0.09092903 0.10932477 0.01992021 -0.00157189 -0.03532732 -0.00205094"/>
+                        <inertial pos="-0.0897515 -0.01644027 -0.01104105" mass="2.4008846" fullinertia="0.09133451 0.11040001 0.02059866 -0.00159777 -0.03562713 -0.00206082"/>
                         <!-- <joint name="right_shank_joint" pos="0 0 0" axis="0 -1 0" limited="true" range="-3.141593 3.141593" damping="0.1828" armature="0.0547" /> -->
                         <joint name="right_shank_joint" pos="0 0 0" axis="0 -1 0" limited="true" range="-3.141593 3.141593" />
                         <geom class="visual" rgba="0.79216 0.81961 0.93333 1" mesh="right_shank_link" />
@@ -99,7 +99,7 @@
                     <geom name="left_thigh_collision" type="mesh" mesh="left_thigh_link" rgba="0 0 1 0" contype="8" conaffinity="1"/>
 
                     <body name="left_shank_link" pos="0.000000 0.045000 -0.260000">
-                        <inertial pos="-0.09290562 0.01658216 -0.01221693" mass="2.3057846" fullinertia="0.09091198 0.10931687 0.01992936 0.00157085 -0.03533124 0.00205198"/>
+                        <inertial pos="-0.08977188 0.01644027 -0.01102067" mass="2.4008846" fullinertia="0.09131735 0.11039229 0.02060811 0.00159673 -0.03563096 0.00206186"/>
                         <!-- <joint name="left_shank_joint" pos="0 0 0" axis="0 1 0" limited="true" range="-3.141593 3.141593" damping="0.1828" armature="0.0547" /> -->
                         <joint name="left_shank_joint" pos="0 0 0" axis="0 1 0" limited="true" range="-3.141593 3.141593" />
                         <geom class="visual" rgba="0.79216 0.81961 0.93333 1" mesh="left_shank_link" />
